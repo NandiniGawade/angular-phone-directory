@@ -1,0 +1,15 @@
+<div class="panel">
+    <form [formGroup]="phoneForm" novalidate>
+        <div class="form-group">
+            <p>Enter Phone number</p>
+            <input 
+                type="text" 
+                formControlName="phone"
+                canada-phone
+                maxlength="14"
+                (blur)="onBlurMethod()"
+                />
+        </div>
+        <span *ngIf="phoneForm.value.phone && !isValid" class="error">Invalid Phone number.</span>
+    </form>   
+</div>

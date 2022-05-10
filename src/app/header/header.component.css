@@ -1,0 +1,13 @@
+.div-header {
+    color: white;
+    height: 8vh;
+    background: #005986;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    margin-top: 10px;
+}

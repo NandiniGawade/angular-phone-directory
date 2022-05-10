@@ -1,0 +1,15 @@
+.div-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #747275;
+    background: #d8eeee;
+    height: 5vh;
+    display: flex;
+    justify-content: right;
+}
+
+span {
+    margin-top: 10px;
+}
