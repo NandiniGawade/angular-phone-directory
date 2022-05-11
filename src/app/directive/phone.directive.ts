@@ -3,23 +3,42 @@ import { NgControl } from '@angular/forms';
 @Directive({
     selector: '[canadaPhone]'
 })
+
+/**
+ * This directive will mask the phone number in canadian phone number format.
+ * It will ignore 1 if its first number.
+ */
 export class PhoneDirective {
 
     constructor(
         public ngControl: NgControl) {
     }
 
+    /**
+     * Input model change event to convert number into phone masking.
+     * @param event 
+     */
     @HostListener('ngModelChange', ['$event'])
     onModelChange(event: string): void {
         this.onInputChange(event, false);
     }
+
+    /**
+     * To remove numbers from input box.
+     * @param event 
+     */
 
     @HostListener('keydown.backspace', ['$event'])
     keydownBackspace(event: any): void {
         this.onInputChange(event.target.value, true);
     }
 
-
+    
+    /**
+     * This will convert phone into canadian phone number format.
+     * @param event string type. Number entered by user
+     * @param backspace Boolean
+     */
     onInputChange(event: string, backspace: boolean): void {
         let newVal = event.replace(/\D/g, '');
         if (newVal.charAt(0) === '1') {

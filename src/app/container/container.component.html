@@ -1,7 +1,7 @@
 <div class="panel">
     <form [formGroup]="phoneForm" novalidate>
         <div class="form-group">
-            <p>Enter Phone number</p>
+            <p>{{enterPhoneNumber}}</p>
             <input 
                 name="phone"
                 type="text" 
@@ -11,6 +11,6 @@
                 (blur)="onBlurMethod()"
                 />
         </div>
-        <span *ngIf="!isValid" class="error">Invalid Phone number.</span>
+        <span *ngIf="!isValid" class="error">{{invalidNumber}}</span>
     </form>   
 </div>

@@ -3,12 +3,12 @@
 ## Features
 
 1. Phone masking for canada phone number.
-2. Implemented US international prefix. First number 1 will be ignored.
+2. Ignored US international prefix. First number 1 will be ignored.
 3. Validate phone number is 10 digit.
 4. Added unit test cases.
 5. Added e2e test cases.
 
-##Approach
+## Approach
 
 Implmeneted canada-phone directive. Directive will mask the phone number in canada phone number format.
 
