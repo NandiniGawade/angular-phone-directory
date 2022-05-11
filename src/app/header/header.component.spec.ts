@@ -29,8 +29,8 @@ describe('HeaderComponent', () => {
     });
 
     it('should have Angular Phone Directory header', () => {
-        let el = fixture.debugElement.query(By.css('.div-header'));
-        let spanEl = el.nativeElement;
+        const el = fixture.debugElement.query(By.css('.div-header'));
+        const spanEl = el.nativeElement;
         expect(spanEl.innerHTML).toContain('Angular Phone Directory');
     });
 });

@@ -3,6 +3,7 @@
         <div class="form-group">
             <p>Enter Phone number</p>
             <input 
+                name="phone"
                 type="text" 
                 formControlName="phone"
                 canada-phone
@@ -10,6 +11,6 @@
                 (blur)="onBlurMethod()"
                 />
         </div>
-        <span *ngIf="phoneForm.value.phone && !isValid" class="error">Invalid Phone number.</span>
+        <span *ngIf="!isValid" class="error">Invalid Phone number.</span>
     </form>   
 </div>

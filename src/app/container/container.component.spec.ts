@@ -14,7 +14,7 @@ describe('ContainerComponent', () => {
       imports: [
         ReactiveFormsModule
       ],
-      declarations: [ ContainerComponent,PhoneDirective ],
+      declarations: [ ContainerComponent, PhoneDirective ],
       providers: [
           FormBuilder,
           NgControl
@@ -51,7 +51,7 @@ describe('ContainerComponent', () => {
         tick();
         fixture.whenStable().then(() => {
           expect(fixture.componentInstance.phoneForm.value.phone).toEqual('2345678898');
-        });       
+        });
     }));
 
     it('If phone number is less than 10 digit it should show error message',  fakeAsync(() => {
@@ -71,8 +71,8 @@ describe('ContainerComponent', () => {
       tick();
       fixture.whenStable().then(() => {
         expect(fixture.componentInstance.isValid).toBeFalsy();
-      });       
+      });
   }));
-  
+
   });
 });

@@ -11,21 +11,21 @@ export class PhoneDirective {
 
     @HostListener('ngModelChange', ['$event'])
     onModelChange(event) {
-        this.onInputChange(event, false);        
+        this.onInputChange(event, false);
     }
 
     @HostListener('keydown.backspace', ['$event'])
     keydownBackspace(event) {
         this.onInputChange(event.target.value, true);
     }
-  
+
 
     onInputChange(event, backspace) {
         let newVal = event.replace(/\D/g, '');
-        if(newVal.charAt(0) === "1") {
+        if (newVal.charAt(0) === '1') {
             newVal = newVal.substring(1);
         }
-        
+
         if (backspace && newVal.length <= 6) {
           newVal = newVal.substring(0, newVal.length - 1);
         }
