@@ -1,6 +1,5 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { FormBuilder, NgControl, ReactiveFormsModule } from '@angular/forms';
-import { By } from '@angular/platform-browser';
 import { PhoneDirective } from '../directive/phone.directive';
 
 import { ContainerComponent } from './container.component';
@@ -42,7 +41,7 @@ describe('ContainerComponent', () => {
 
     it('after masking ngmodel value should not change',  fakeAsync(() => {
         const hostElement: HTMLElement = fixture.nativeElement;
-        const nameInput: HTMLInputElement = hostElement.querySelector('input')!;
+        const nameInput: HTMLInputElement = hostElement.querySelector('input');
         fixture.detectChanges();
 
         nameInput.value = '2345678898';
@@ -56,7 +55,7 @@ describe('ContainerComponent', () => {
 
     it('If phone number is less than 10 digit it should show error message',  fakeAsync(() => {
       const hostElement: HTMLElement = fixture.nativeElement;
-      const nameInput: HTMLInputElement = hostElement.querySelector('input')!;
+      const nameInput: HTMLInputElement = hostElement.querySelector('input');
       fixture.detectChanges();
 
       nameInput.value = '234567889';

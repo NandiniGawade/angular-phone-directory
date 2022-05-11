@@ -1,15 +1,15 @@
-import { browser, by, element } from "protractor";
+import { browser, by, element, ElementFinder } from 'protractor';
 
 export class ContainerPage {
-    navigateTo(){
+    navigateTo(): any {
         return browser.get(browser.baseUrl);
     }
 
-    getInputTextbox() {
+    getInputTextbox(): ElementFinder {
         return element(by.name('phone'));
     }
 
-    getContainer() {
+    getContainer(): ElementFinder {
         return element(by.css('.panel'));
     }
 }

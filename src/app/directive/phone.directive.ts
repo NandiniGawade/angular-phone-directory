@@ -1,7 +1,7 @@
 import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
 import { NgControl } from '@angular/forms';
 @Directive({
-    selector: '[canada-phone]'
+    selector: '[canadaPhone]'
 })
 export class PhoneDirective {
 
@@ -10,17 +10,17 @@ export class PhoneDirective {
     }
 
     @HostListener('ngModelChange', ['$event'])
-    onModelChange(event) {
+    onModelChange(event: string): void {
         this.onInputChange(event, false);
     }
 
     @HostListener('keydown.backspace', ['$event'])
-    keydownBackspace(event) {
+    keydownBackspace(event: any): void {
         this.onInputChange(event.target.value, true);
     }
 
 
-    onInputChange(event, backspace) {
+    onInputChange(event: string, backspace: boolean): void {
         let newVal = event.replace(/\D/g, '');
         if (newVal.charAt(0) === '1') {
             newVal = newVal.substring(1);
